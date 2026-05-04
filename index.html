@@ -3,177 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sensiff - Melhor Sensibilidade FF</title>
+<title>Sensiff - Sensi Pro Free Fire</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body {background:#ffffff;color:#000;font-family:Arial,sans-serif}
-.header {background:linear-gradient(135deg, #a020f0 0%, #6a0dad 100%);padding:30px 20px;text-align:center;color:white}
-.header h1 {font-size:36px;margin-bottom:5px;letter-spacing:2px}
-.header p {font-size:14px;opacity:0.9}
-.container {padding:25px 20px;max-width:550px;margin:0 auto}
-.badge {background:#00b050;color:white;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:bold;display:inline-block;margin-bottom:15px}
-.beneficios {background:#f5f5f5;border-radius:12px;padding:20px;margin:20px 0;border:1px solid #e0e0e0}
-.beneficios h3 {color:#a020f0;margin-bottom:12px;font-size:18px}
-.beneficios ul {list-style:none;text-align:left}
-.beneficios li {padding:8px 0;color:#333;font-size:15px}
-.beneficios li:before {content:"✓ ";color:#00b050;font-weight:bold;margin-right:8px}
-.preco-box {background:linear-gradient(135deg, #a020f0 0%, #8a1ad1 100%);border-radius:15px;padding:25px;margin:25px 0;color:white}
-.preco-box .de {text-decoration:line-through;opacity:0.7;font-size:16px}
-.preco-box .por {font-size:42px;font-weight:bold;margin:5px 0}
-.preco-box .off {background:#00ff88;color:#000;padding:4px 10px;border-radius:6px;font-size:13px;font-weight:bold;display:inline-block}
-h2 {color:#a020f0;margin:25px 0 15px 0;font-size:22px}
-input {display:block;margin:10px auto;padding:14px;width:100%;border-radius:10px;border:2px solid #ddd;background:#f9f9f9;color:#000;font-size:16px;transition:0.3s}
-input:focus {outline:none;border-color:#a020f0}
-input::placeholder {color:#888}
-input.erro {border-color:#ff4444;background:#fff5f5}
-input.valido {border-color:#00b050;background:#f0fff4}
-.msg-erro {color:#ff4444;font-size:12px;text-align:left;margin:-5px 0 10px 5px;display:none}
-.msg-erro.show {display:block}
-button {background:#a020f0;border:none;padding:16px 30px;color:white;font-size:18px;font-weight:bold;border-radius:10px;cursor:pointer;width:100%;margin-top:15px;transition:0.3s}
-button:hover {background:#8a1ad1;transform:translateY(-2px)}
-button:disabled {background:#ccc;cursor:not-allowed;transform:none}
-.qr {margin-top:25px;background:#f5f5f5;padding:20px;border-radius:15px;border:1px solid #e0e0e0}
-.qr h3 {color:#00b050;margin-bottom:15px}
-.qr img {border-radius:10px;background:white;padding:12px;border:1px solid #ddd;width:200px;height:200px}
-.qr p {color:#333;margin-top:12px;font-size:14px;line-height:1.6}
-.pix-copia-cola {margin-top:18px;text-align:left}
-.pix-copia-cola label {font-size:14px;font-weight:bold;color:#333;display:block;margin-bottom:6px}
-.pix-codigo {background:#fff;border:2px solid #ddd;border-radius:10px;padding:12px;font-size:11px;word-break:break-all;color:#000;margin-bottom:12px}
-.btn-copiar {background:#00b050;border:none;padding:12px 20px;color:white;font-size:15px;font-weight:bold;border-radius:10px;cursor:pointer;width:100%}
-.btn-copiar:hover {background:#009640}
-.social {margin:30px 0;text-align:center}
-.social a {display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;background:linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);padding:12px 24px;border-radius:10px;font-size:16px;font-weight:bold}
-.social img {width:22px;height:22px}
-.footer {text-align:center;padding:20px;color:#666;font-size:12px}
+body {
+background:#0a0a0f;
+color:#fff;
+font-family:'Arial',sans-serif;
+background-image:radial-gradient(circle at 20% 50%, #1a0033 0%, transparent 50%),
+radial-gradient(circle at 80% 80%, #0d001a 0%, transparent 50%),
+radial-gradient(circle at 40% 20%, #1a0033 0%, transparent 50%);
+min-height:100vh;
+overflow-x:hidden;
+}
+.container {max-width:1200px;margin:0 auto;padding:20px}
+header {text-align:center;padding:30px 0}
+.logo {font-size:42px;font-weight:900;background:linear-gradient(90deg, #a020f0, #d940ff);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+.sub {color:#888;font-size:14px}
+.insta-btn {
+display:inline-flex;align-items:center;gap:8px;
+background:linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+padding:10px 20px;border-radius:25px;text-decoration:none;color:white;
+font-weight:bold;margin-top:15px;transition:0.3s;
+}
+.insta-btn:hover {transform:scale(1.05);box-shadow:0 0 20px rgba(220,39,67,0.5)}
+.insta-btn img {width:20px;height:20px}
+
+.planos {
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+gap:25px;margin:40px 0;
+}
+.card {
+background:linear-gradient(145deg, #1a1a2e, #0f0f1e);
+border:2px solid #2a2a4a;
+border-radius:20px;
+padding:25px;
+position:relative;
+overflow:hidden;
+transition:0.4s;
+}
+.card::before {
+content:'';
+position:absolute;
+top:-50%;left:-50%;width:200%;height:200%;
+background:radial-gradient(circle, rgba(160,32,240,0.1) 0%, transparent 70%);
+animation:pulse 4s infinite;
+}
+@keyframes pulse {0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.card:hover {border-color:#a020f0;transform:translateY(-8px);box-shadow:0 10px 40px rgba(160,32,240,0.3)}
+.card h2 {
+font-size:28px;text-align:center;margin-bottom:20px;
+display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.card h2 img {width:30px;height:30px}
+.beneficios {list-style:none;margin:20px 0}
+.beneficios li {
+padding:8px 0;font-size:14px;display:flex;align-items:center;gap:10px;color:#ddd;
+}
+.beneficios li::before {
+content:'✓';color:#00ff88;font-weight:bold;font-size:18px;
+background:#00ff8820;width:22px;height:22px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.preco-de {text-align:center;color:#666;font-size:14px;margin-top:15px}
+.preco-de span {text-decoration:line-through}
+.preco-por {text-align:center;margin:5px 0 15px 0}
+.preco-por .valor {font-size:42px;font-weight:900;color:#fff}
+.preco-por .centavos {font-size:24px;color:#fff}
+.select-valor {
+width:100%;padding:12px;margin:10px 0;
+background:#0f0f1e;border:2px solid #2a2a4a;border-radius:10px;
+color:#fff;font-size:16px;text-align:center;
+}
+.btn-comprar {
+width:100%;padding:15px;border:none;
+background:linear-gradient(90deg, #00ff88, #00cc6a);
+color:#000;font-size:18px;font-weight:900;border-radius:12px;
+cursor:pointer;transition:0.3s;text-transform:uppercase;
+}
+.btn-comprar:hover {transform:scale(1.03);box-shadow:0 0 25px rgba(0,255,136,0.6)}
+
+.pix-info {
+background:#1a1a2e;border:2px solid #2a2a4a;border-radius:20px;
+padding:30px;margin:40px auto;max-width:500px;text-align:center;
+}
+.pix-info h3 {color:#00b050;margin-bottom:15px}
+.qr-box {background:#fff;padding:15px;border-radius:15px;display:inline-block;margin-bottom:15px}
+.pix-codigo {
+background:#0f0f1e;border:1px solid #2a2a4a;border-radius:10px;
+padding:12px;font-size:11px;word-break:break-all;color:#aaa;margin:15px 0;
+}
+.btn-copiar {
+background:#a020f0;border:none;padding:12px 30px;color:white;
+font-size:14px;border-radius:10px;cursor:pointer;width:100%;font-weight:bold;
+}
+.btn-copiar:hover {background:#8a1ad1}
+
+footer {text-align:center;padding:30px 0;color:#555;font-size:12px}
 </style>
 </head>
 <body>
-<div class="header">
-<h1>SENSIFF</h1>
-<p>A sensibilidade que vai te levar ao Mestre</p>
-</div>
-
 <div class="container">
-<div class="badge">🔥 MAIS VENDIDA</div>
+<header>
+<div class="logo">SENSIFF</div>
+<div class="sub">A Melhor Sensi do Free Fire</div>
+<a href="https://www.instagram.com/gabrielsantos_134?igsh=MWZnYzJ6eWRpYTBraw==" target="_blank" class="insta-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"> @gabrielsantos_134
+</a>
+</header>
 
-<div class="beneficios">
-<h3>O que você recebe:</h3>
-<ul>
-<li>Configuração completa de sensibilidade</li>
-<li>DPI otimizado para seu celular</li>
-<li>HUD personalizada pra capa</li>
-<li>Suporte via WhatsApp por 7 dias</li>
-<li>Atualização grátis se mudar de patch</li>
+<div class="planos">
+<!-- ANDROID -->
+<div class="card">
+<h2>
+<img src="https://cdn-icons-png.flaticon.com/512/226/226770.png" alt="Android">
+ANDROID
+</h2>
+<ul class="beneficios">
+<li>Samsung/Xiaomi/Motorola/Realme/LG/Asus</li>
+<li>Comunidade no WhatsApp</li>
+<li>Sensi com DPI personalizado</li>
+<li>Huds Secretos</li>
+<li>Otimização para deixar o celular mais rápido</li>
+<li>Métodos secretos da Sensi sem Pinar</li>
+<li>Botão de atirar personalizado</li>
+<li>Mira 2x 4x Full vermelho</li>
+<li>Sensi Baixa, Média e Alta</li>
 </ul>
+<div class="preco-de">De: <span>R$ 47,99</span> Por:</div>
+<div class="preco-por">R$ <span class="valor">25</span><span class="centavos">,00</span></div>
+<button class="btn-comprar" onclick="comprarDireto('ANDROID', 25)">EU QUERO!</button>
 </div>
 
-<div class="preco-box">
-<div class="de">De R$ 15,00</div>
-<div class="por">R$ 7,00</div>
-<div class="off">53% OFF</div>
+<!-- IPHONE -->
+<div class="card">
+<h2>
+<img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="iPhone">
+IPHONE
+</h2>
+<ul class="beneficios">
+<li>Todas as versões de iPhones</li>
+<li>Comunidade no WhatsApp</li>
+<li>Sensi com DPI personalizado</li>
+<li>Huds Secretos</li>
+<li>Otimização para deixar o celular mais rápido</li>
+<li>Métodos secretos da Sensi sem Pinar</li>
+<li>Botão de atirar personalizado</li>
+<li>Mira 2x 4x Full vermelho</li>
+<li>Sensi Baixa, Média e Alta</li>
+</ul>
+<div class="preco-de">De: <span>R$ 47,99</span> Por:</div>
+<select class="select-valor" id="valorIOS">
+<option value="15">R$ 15,00 - Sensi Básica</option>
+<option value="25" selected>R$ 25,00 - Sensi Pro</option>
+<option value="35">R$ 35,00 - Sensi Pro Max</option>
+</select>
+<button class="btn-comprar" onclick="comprarIOS()">EU QUERO!</button>
 </div>
 
-<h2>Preencha seus dados</h2>
-<form id="formCompra">
-<input type="text" id="nome" placeholder="Nome completo" required>
-<input type="text" id="cpf" placeholder="CPF (somente números)" maxlength="14" required>
-<div class="msg-erro" id="erroCpf">CPF inválido. Digite um CPF válido.</div>
-<input type="email" id="email" placeholder="Email" required>
-<input type="tel" id="telefone" placeholder="WhatsApp com DDD" required>
-<input type="text" id="modelo" placeholder="Modelo do celular" required>
-</form>
+<!-- EMULADOR -->
+<div class="card">
+<h2>
+<img src="https://cdn-icons-png.flaticon.com/512/270/270798.png" alt="Emulador">
+EMULADOR
+</h2>
+<ul class="beneficios">
+<li>Versões do Emulador Perfeito</li>
+<li>Comunidade no WhatsApp</li>
+<li>Otimização para PC Fraco</li>
+<li>Ajustes do Mouse e Mira</li>
+<li>Otimizações do Emulador</li>
+<li>Sensi dos Famosos</li>
+<li>As melhores versões De Emulador</li>
+<li>Bônus: Máximo Desempenho do Computador</li>
+<li>Segredos dos Famosos</li>
+</ul>
+<div class="preco-de">De: <span>R$ 79,99</span> Por:</div>
+<div class="preco-por">R$ <span class="valor">50</span><span class="centavos">,00</span></div>
+<button class="btn-comprar" onclick="comprarDireto('EMULADOR', 50)">EU QUERO!</button>
+</div>
+</div>
 
-<div class="qr">
+<div class="pix-info">
 <h3>Pagamento via Pix</h3>
+<div class="qr-box">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126440014br.gov.bcb.pix0122ktxgabriel13@gmail.com52040000530398654047.005802BR5925GABRIEL DOS SANTOS GONCAL6009SAO PAULO62070503***6304083F" alt="QR Code Pix">
-<p><strong>1.</strong> Escaneie o QR Code ou copie o código<br>
-<strong>2.</strong> Pague R$ 7,00 no Pix<br>
-<strong>3.</strong> Clique em "COMPRAR SENSI" e envie o comprovante</p>
-
-<div class="pix-copia-cola">
-<label>Pix Copia e Cola:</label>
+</div>
 <div class="pix-codigo" id="codigoPix">00020126440014br.gov.bcb.pix0122ktxgabriel13@gmail.com52040000530398654047.005802BR5925GABRIEL DOS SANTOS GONCAL6009SAO PAULO62070503***6304083F</div>
-<button type="button" class="btn-copiar" onclick="copiarPix()">COPIAR CÓDIGO PIX</button>
-</div>
-</div>
-
-<button onclick="comprar()" id="btnComprar">COMPRAR SENSI AGORA</button>
-
-<div class="social">
-<a href="https://www.instagram.com/gabrielsantos_134?igsh=MWZnYzJ6eWRpYTBraw==" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Siga no Instagram</a>
-</div>
+<button class="btn-copiar" onclick="copiarPix()">COPIAR CÓDIGO PIX</button>
+<p style="margin-top:15px;font-size:13px;color:#888">Clique em "EU QUERO!" no plano desejado para comprar</p>
 </div>
 
-<div class="footer">
-Sensiff © 2026 - Todos os direitos reservados
+<footer>
+© 2026 Sensiff - Todos os direitos reservados
+</footer>
 </div>
 
 <script>
-function validarCPF(cpf) {
-cpf = cpf.replace(/[^\d]/g, '');
-if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
-let soma = 0;
-for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
-let resto = 11 - (soma % 11);
-if (resto === 10 || resto === 11) resto = 0;
-if (resto !== parseInt(cpf.charAt(9))) return false;
-soma = 0;
-for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
-resto = 11 - (soma % 11);
-if (resto === 10 || resto === 11) resto = 0;
-if (resto !== parseInt(cpf.charAt(10))) return false;
-return true;
+const numeroWhatsApp = "5577981047147";
+
+function comprarDireto(plano, valor) {
+let msg = `Olá! Quero comprar a *SENSI ${plano}*%0A%0A*Valor:* R$ ${valor},00%0A%0AJá vou fazer o Pix. Me manda os dados para receber a sensi!`;
+window.open(`https://wa.me/${numeroWhatsApp}?text=${msg}`, '_blank');
 }
 
-document.getElementById('cpf').addEventListener('input', function(e) {
-let valor = e.target.value.replace(/\D/g, '');
-if (valor.length > 3) valor = valor.replace(/^(\d{3})(\d)/, '$1.$2');
-if (valor.length > 7) valor = valor.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
-if (valor.length > 11) valor = valor.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
-e.target.value = valor.substring(0, 14);
-let cpfLimpo = valor.replace(/\D/g, '');
-let erroDiv = document.getElementById('erroCpf');
-if (cpfLimpo.length === 11) {
-if (validarCPF(cpfLimpo)) {
-e.target.classList.remove('erro');
-e.target.classList.add('valido');
-erroDiv.classList.remove('show');
-} else {
-e.target.classList.remove('valido');
-e.target.classList.add('erro');
-erroDiv.classList.add('show');
+function comprarIOS() {
+let valor = document.getElementById('valorIOS').value;
+let tipo = valor == 15 ? 'Básica' : valor == 25 ? 'Pro' : 'Pro Max';
+let msg = `Olá! Quero comprar a *SENSI IPHONE ${tipo}*%0A%0A*Valor:* R$ ${valor},00%0A%0AJá vou fazer o Pix. Me manda os dados para receber a sensi!`;
+window.open(`https://wa.me/${numeroWhatsApp}?text=${msg}`, '_blank');
 }
-} else {
-e.target.classList.remove('erro', 'valido');
-erroDiv.classList.remove('show');
-}
-});
 
 function copiarPix(){
 let codigo = document.getElementById('codigoPix').innerText;
 navigator.clipboard.writeText(codigo).then(function() {
-alert('Código Pix copiado! Cola no app do seu banco.');
-}, function() {
-alert('Não copiou automático. Seleciona o código e copia manual.');
+alert('Código Pix copiado! Cole no app do seu banco.');
 });
 }
-
-function comprar(){
-let numero="5577981047147";
-let nome=document.getElementById('nome').value;
-let cpf=document.getElementById('cpf').value;
-let email=document.getElementById('email').value;
-let telefone=document.getElementById('telefone').value;
-let modelo=document.getElementById('modelo').value;
-let cpfLimpo = cpf.replace(/\D/g, '');
-if(!nome||!cpf||!email||!telefone||!modelo){
-alert('Preencha todos os campos.');
-return;
-}
-if(!validarCPF(cpfLimpo)){
-alert('CPF inválido. Corrija antes de continuar.');
-document.getElementById('cpf').focus();
-return;
-}
-let msg
+</script>
+</body>
+</html>
