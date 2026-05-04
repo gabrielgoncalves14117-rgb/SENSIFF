@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sensiff - Melhor Sensibilidade FF</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body {background:#ffffff;color:#000;font-family:Arial,sans-serif}
+.header {background:linear-gradient(135deg, #a020f0 0%, #6a0dad 100%);padding:30px 20px;text-align:center;color:white}
+.header h1 {font-size:36px;margin-bottom:5px;letter-spacing:2px}
+.header p {font-size:14px;opacity:0.9}
+.container {padding:25px 20px;max-width:550px;margin:0 auto}
+.badge {background:#00b050;color:white;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:bold;display:inline-block;margin-bottom:15px}
+.beneficios {background:#f5f5f5;border-radius:12px;padding:20px;margin:20px 0;border:1px solid #e0e0e0}
+.beneficios h3 {color:#a020f0;margin-bottom:12px;font-size:18px}
+.beneficios ul {list-style:none;text-align:left}
+.beneficios li {padding:8px 0;color:#333;font-size:15px}
+.beneficios li:before {content:"✓ ";color:#00b050;font-weight:bold;margin-right:8px}
+.preco-box {background:linear-gradient(135deg, #a020f0 0%, #8a1ad1 100%);border-radius:15px;padding:25px;margin:25px 0;color:white}
+.preco-box .de {text-decoration:line-through;opacity:0.7;font-size:16px}
+.preco-box .por {font-size:42px;font-weight:bold;margin:5px 0}
+.preco-box .off {background:#00ff88;color:#000;padding:4px 10px;border-radius:6px;font-size:13px;font-weight:bold;display:inline-block}
+h2 {color:#a020f0;margin:25px 0 15px 0;font-size:22px}
+input {display:block;margin:10px auto;padding:14px;width:100%;border-radius:10px;border:2px solid #ddd;background:#f9f9f9;color:#000;font-size:16px;transition:0.3s}
+input:focus {outline:none;border-color:#a020f0}
+input::placeholder {color:#888}
+input.erro {border-color:#ff4444;background:#fff5f5}
+input.valido {border-color:#00b050;background:#f0fff4}
+.msg-erro {color:#ff4444;font-size:12px;text-align:left;margin:-5px 0 10px 5px;display:none}
+.msg-erro.show {display:block}
+button {background:#a020f0;border:none;padding:16px 30px;color:white;font-size:18px;font-weight:bold;border-radius:10px;cursor:pointer;width:100%;margin-top:15px;transition:0.3s}
+button:hover {background:#8a1ad1;transform:translateY(-2px)}
+button:disabled {background:#ccc;cursor:not-allowed;transform:none}
+.qr {margin-top:25px;background:#f5f5f5;padding:20px;border-radius:15px;border:1px solid #e0e0e0}
+.qr h3 {color:#00b050;margin-bottom:15px}
+.qr img {border-radius:10px;background:white;padding:12px;border:1px solid #ddd;width:200px;height:200px}
+.qr p {color:#333;margin-top:12px;font-size:14px;line-height:1.6}
+.pix-copia-cola {margin-top:18px;text-align:left}
+.pix-copia-cola label {font-size:14px;font-weight:bold;color:#333;display:block;margin-bottom:6px}
+.pix-codigo {background:#fff;border:2px solid #ddd;border-radius:10px;padding:12px;font-size:11px;word-break:break-all;color:#000;margin-bottom:12px}
+.btn-copiar {background:#00b050;border:none;padding:12px 20px;color:white;font-size:15px;font-weight:bold;border-radius:10px;cursor:pointer;width:100%}
+.btn-copiar:hover {background:#009640}
+.social {margin:30px 0;text-align:center}
+.social a {display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;background:linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);padding:12px 24px;border-radius:10px;font-size:16px;font-weight:bold}
+.social img {width:22px;height:22px}
+.footer {text-align:center;padding:20px;color:#666;font-size:12px}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>SENSIFF</h1>
+<p>A sensibilidade que vai te levar ao Mestre</p>
+</div>
+
+<div class="container">
+<div class="badge">🔥 MAIS VENDIDA</div>
+
+<div class="beneficios">
+<h3>O que você recebe:</h3>
+<ul>
+<li>Configuração completa de sensibilidade</li>
+<li>DPI otimizado para seu celular</li>
+<li>HUD personalizada pra capa</li>
+<li>Suporte via WhatsApp por 7 dias</li>
+<li>Atualização grátis se mudar de patch</li>
+</ul>
+</div>
+
+<div class="preco-box">
+<div class="de">De R$ 15,00</div>
+<div class="por">R$ 7,00</div>
+<div class="off">53% OFF</div>
+</div>
+
+<h2>Preencha seus dados</h2>
+<form id="formCompra">
+<input type="text" id="nome" placeholder="Nome completo" required>
+<input type="text" id="cpf" placeholder="CPF (somente números)" maxlength="14" required>
+<div class="msg-erro" id="erroCpf">CPF inválido. Digite um CPF válido.</div>
+<input type="email" id="email" placeholder="Email" required>
+<input type="tel" id="telefone" placeholder="WhatsApp com DDD" required>
+<input type="text" id="modelo" placeholder="Modelo do celular" required>
+</form>
+
+<div class="qr">
+<h3>Pagamento via Pix</h3>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126440014br.gov.bcb.pix0122ktxgabriel13@gmail.com52040000530398654047.005802BR5925GABRIEL DOS SANTOS GONCAL6009SAO PAULO62070503***6304083F" alt="QR Code Pix">
+<p><strong>1.</strong> Escaneie o QR Code ou copie o código<br>
+<strong>2.</strong> Pague R$ 7,00 no Pix<br>
+<strong>3.</strong> Clique em "COMPRAR SENSI" e envie o comprovante</p>
+
+<div class="pix-copia-cola">
+<label>Pix Copia e Cola:</label>
+<div class="pix-codigo" id="codigoPix">00020126440014br.gov.bcb.pix0122ktxgabriel13@gmail.com52040000530398654047.005802BR5925GABRIEL DOS SANTOS GONCAL6009SAO PAULO62070503***6304083F</div>
+<button type="button" class="btn-copiar" onclick="copiarPix()">COPIAR CÓDIGO PIX</button>
+</div>
+</div>
+
+<button onclick="comprar()" id="btnComprar">COMPRAR SENSI AGORA</button>
+
+<div class="social">
+<a href="https://www.instagram.com/gabrielsantos_134?igsh=MWZnYzJ6eWRpYTBraw==" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Siga no Instagram</a>
+</div>
+</div>
+
+<div class="footer">
+Sensiff © 2026 - Todos os direitos reservados
+</div>
+
+<script>
+function validarCPF(cpf) {
+cpf = cpf.replace(/[^\d]/g, '');
+if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+let soma = 0;
+for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+let resto = 11 - (soma % 11);
+if (resto === 10 || resto === 11) resto = 0;
+if (resto !== parseInt(cpf.charAt(9))) return false;
+soma = 0;
+for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+resto = 11 - (soma % 11);
+if (resto === 10 || resto === 11) resto = 0;
+if (resto !== parseInt(cpf.charAt(10))) return false;
+return true;
+}
+
+document.getElementById('cpf').addEventListener('input', function(e) {
+let valor = e.target.value.replace(/\D/g, '');
+if (valor.length > 3) valor = valor.replace(/^(\d{3})(\d)/, '$1.$2');
+if (valor.length > 7) valor = valor.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+if (valor.length > 11) valor = valor.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
+e.target.value = valor.substring(0, 14);
+let cpfLimpo = valor.replace(/\D/g, '');
+let erroDiv = document.getElementById('erroCpf');
+if (cpfLimpo.length === 11) {
+if (validarCPF(cpfLimpo)) {
+e.target.classList.remove('erro');
+e.target.classList.add('valido');
+erroDiv.classList.remove('show');
+} else {
+e.target.classList.remove('valido');
+e.target.classList.add('erro');
+erroDiv.classList.add('show');
+}
+} else {
+e.target.classList.remove('erro', 'valido');
+erroDiv.classList.remove('show');
+}
+});
+
+function copiarPix(){
+let codigo = document.getElementById('codigoPix').innerText;
+navigator.clipboard.writeText(codigo).then(function() {
+alert('Código Pix copiado! Cola no app do seu banco.');
+}, function() {
+alert('Não copiou automático. Seleciona o código e copia manual.');
+});
+}
+
+function comprar(){
+let numero="5577981047147";
+let nome=document.getElementById('nome').value;
+let cpf=document.getElementById('cpf').value;
+let email=document.getElementById('email').value;
+let telefone=document.getElementById('telefone').value;
+let modelo=document.getElementById('modelo').value;
+let cpfLimpo = cpf.replace(/\D/g, '');
+if(!nome||!cpf||!email||!telefone||!modelo){
+alert('Preencha todos os campos.');
+return;
+}
+if(!validarCPF(cpfLimpo)){
+alert('CPF inválido. Corrija antes de continuar.');
+document.getElementById('cpf').focus();
+return;
+}
+let msg
