@@ -3,28 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIELSENSI 2026 - PIX Caixa</title>
+<title>BIELSENSI 2026 - PIX CAIXA</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,sans-serif;background:#0a0a0a;color:#fff;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
-.container{max-width:450px;width:100%;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(255,0,100,.3);border:2px solid #ff0066;animation:fadeIn .5s ease}
+.container{max-width:450px;width:100%;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(255,215,0,.3);border:2px solid #FFD700;animation:fadeIn .5s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-h1{text-align:center;font-size:28px;margin-bottom:10px;background:linear-gradient(45deg,#ff0066,#ff3399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pulse 2s infinite}
+h1{text-align:center;font-size:28px;margin-bottom:10px;background:linear-gradient(45deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 .subtitle{text-align:center;color:#888;margin-bottom:25px;font-size:14px}
+.preco-display{text-align:center;background:#0a0a0a;border:2px solid #FFD700;border-radius:12px;padding:15px;margin-bottom:20px;animation:glow 2s infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 5px #FFD700}50%{box-shadow:0 0 20px #FFD700,0 0 30px #FFD700}}
+.preco-display h2{color:#FFD700;font-size:32px;margin-bottom:5px}
+.preco-display p{color:#888;font-size:12px}
 .btn-group{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
-.btn{padding:16px;border:2px solid #ff0066;background:#1a1a1a;color:#fff;border-radius:12px;font-size:16px;font-weight:bold;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
-.btn:hover{background:#ff0066;transform:scale(1.02);box-shadow:0 5px 20px rgba(255,0,100,.4)}
+.btn{padding:16px;border:2px solid #FFD700;background:#1a1a1a;color:#fff;border-radius:12px;font-size:16px;font-weight:bold;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+.btn:hover{background:#FFD700;color:#000;transform:scale(1.02);box-shadow:0 5px 20px rgba(255,215,0,.4)}
 .btn:active{transform:scale(0.98)}
-.btn.active{background:#ff0066;animation:glow 1.5s infinite}
-@keyframes glow{0%,100%{box-shadow:0 0 5px #ff0066}50%{box-shadow:0 0 20px #ff0066,0 0 30px #ff0066}}
+.btn.active{background:#FFD700;color:#000;animation:glowBtn 1.5s infinite}
+@keyframes glowBtn{0%,100%{box-shadow:0 0 5px #FFD700}50%{box-shadow:0 0 20px #FFD700,0 0 30px #FFD700}}
 .input{width:100%;padding:14px;margin-bottom:12px;border:2px solid #333;background:#0a0a0a;color:#fff;border-radius:10px;font-size:15px;transition:.3s}
-.input:focus{outline:none;border-color:#ff0066;box-shadow:0 0 10px rgba(255,0,100,.3)}
+.input:focus{outline:none;border-color:#FFD700;box-shadow:0 0 10px rgba(255,215,0,.3)}
 .input.erro{border-color:#ff3333;animation:shake .4s}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
-.btn-buy{width:100%;padding:18px;background:linear-gradient(45deg,#ff0066,#ff3399);border:none;border-radius:12px;color:#fff;font-size:18px;font-weight:bold;cursor:pointer;margin-top:10px;position:relative;overflow:hidden;transition:.2s}
-.btn-buy:hover{transform:scale(1.03);box-shadow:0 10px 30px rgba(255,0,100,.6)}
+.btn-buy{width:100%;padding:18px;background:linear-gradient(45deg,#FFD700,#FFA500);border:none;border-radius:12px;color:#000;font-size:18px;font-weight:bold;cursor:pointer;margin-top:10px;position:relative;overflow:hidden;transition:.2s}
+.btn-buy:hover{transform:scale(1.03);box-shadow:0 10px 30px rgba(255,215,0,.6)}
 .btn-buy:active{transform:scale(0.97)}
+.btn-buy:disabled{background:#333;color:#666;cursor:not-allowed;transform:scale(1)}
 .pix-area{display:none;text-align:center;margin-top:20px;padding:20px;background:#0a0a0a;border-radius:12px;border:2px solid #00ff88;animation:slideUp .4s ease}
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .pix-area h3{color:#00ff88;margin-bottom:15px}
@@ -36,9 +41,9 @@ h1{text-align:center;font-size:28px;margin-bottom:10px;background:linear-gradien
 .btn-confirm{width:100%;padding:16px;background:#00ff88;border:none;border-radius:10px;color:#000;font-size:16px;font-weight:bold;cursor:pointer;margin-top:15px;transition:.2s}
 .btn-confirm:hover{transform:scale(1.02);box-shadow:0 5px 20px rgba(0,255,136,.4)}
 .btn-confirm:active{transform:scale(0.98)}
-.alert{background:#ff0066;padding:12px;border-radius:8px;margin-top:15px;font-size:13px;text-align:center;animation:pulseAlert 2s infinite}
+.alert{background:#FFD700;color:#000;padding:12px;border-radius:8px;margin-top:15px;font-size:13px;text-align:center;font-weight:bold;animation:pulseAlert 2s infinite}
 @keyframes pulseAlert{0%,100%{opacity:1}50%{opacity:0.7}}
-.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.6);transform:scale(0);animation:rippleEffect .6s linear;pointer-events:none}
+.ripple{position:absolute;border-radius:50%;background:rgba(0,0,0,.3);transform:scale(0);animation:rippleEffect .6s linear;pointer-events:none}
 @keyframes rippleEffect{to{transform:scale(4);opacity:0}}
 .erro-msg{color:#ff3333;font-size:12px;margin-top:-8px;margin-bottom:10px;display:none}
 </style>
@@ -49,23 +54,28 @@ h1{text-align:center;font-size:28px;margin-bottom:10px;background:linear-gradien
 <p class="subtitle">PAGAMENTO PIX | ENTREGA VIA WHATSAPP</p>
 
 <div id="step1">
-<div class="btn-group">
-<button class="btn" onclick="selectPlatform('android',event)">📱 ANDROID</button>
-<button class="btn" onclick="selectPlatform('ios',event)">📱 iOS / IPHONE</button>
-<button class="btn" onclick="selectPlatform('emulador',event)">💻 EMULADOR</button>
+<div class="preco-display">
+<h2 id="precoValor">R$ 0,00</h2>
+<p>Escolha sua plataforma abaixo</p>
 </div>
-<input type="text" class="input" id="nome" placeholder="Seu nome no jogo" maxlength="20">
+
+<div class="btn-group">
+<button class="btn" onclick="selectPlatform('android',event)">📱 SENSI ANDROID</button>
+<button class="btn" onclick="selectPlatform('ios',event)">📱 SENSI iOS / IPHONE</button>
+<button class="btn" onclick="selectPlatform('emulador',event)">💻 SENSI EMULADOR</button>
+</div>
+<input type="text" class="input" id="nome" placeholder="Seu nome" maxlength="30">
 <input type="text" class="input" id="cpf" placeholder="Seu CPF - Obrigatório" maxlength="14">
 <p class="erro-msg" id="erroCpf">CPF inválido! Digite os 11 números.</p>
-<button class="btn-buy" onclick="gerarPix(event)">GERAR PIX R$ 4,99</button>
+<button class="btn-buy" id="btnGerar" onclick="gerarPix(event)" disabled>ESCOLHA UMA PLATAFORMA</button>
 </div>
 
 <div id="pixArea" class="pix-area">
-<h3>✅ PIX GERADO - R$ 4,99</h3>
+<h3>✅ PIX GERADO - <span id="precoPix">R$ 4,99</span></h3>
 <p style="margin-bottom:10px;font-size:14px;color:#888;">1. Paga com o QR Code ou Copia e Cola</p>
 <img id="qrImg" class="qr" src="" alt="QR Code">
 <button class="btn-copy-pix" onclick="copiarPix(event)">📋 COPIAR CÓDIGO PIX</button>
-<p style="font-size:11px;word-break:break-all;color:#666;margin:10px 0;" id="pixCode">00020126440014br.gov.bcb.pix0122ktxgabriel13@gmail.com52040000530398654047.005802BR5925GABRIEL DOS SANTOS GONCAL6009SAO PAULO62070503***6304083F</p>
+<p style="font-size:11px;word-break:break-all;color:#666;margin:10px 0;" id="pixCode">COLE_SEU_CODIGO_PIX_AQUI</p>
 <div class="alert">2. APÓS PAGAR, MANDA O COMPROVANTE NO WHATS: 77 98104-7147</div>
 <a href="https://wa.me/5577981047147?text=Ja%20paguei%20a%20BIELSENSI%20" target="_blank"><button class="btn-confirm" onclick="criarRipple(event)">ENVIAR COMPROVANTE NO WHATS</button></a>
 <p style="font-size:11px;color:#666;margin-top:10px;">Você recebe a sensi em até 2min no WhatsApp</p>
@@ -73,9 +83,14 @@ h1{text-align:center;font-size:28px;margin-bottom:10px;background:linear-gradien
 
 <script>
 let platform = '';
-const pixCode = '00020126440014br.gov.bcb.pix0122ktxgabriel13@gmail.com52040000530398654047.005802BR5925GABRIEL DOS SANTOS GONCAL6009SAO PAULO62070503***6304083F';
+let preco = 0;
+const precos = {
+android: 4.99,
+ios: 4.99,
+emulador: 4.99
+};
+let pixCode = 'COLE_SEU_CODIGO_PIX_AQUI'; // TROCA AQUI PELO SEU NOVO CÓDIGO
 
-// EFEITO RIPPLE NOS BOTÕES
 function criarRipple(e) {
 const btn = e.currentTarget;
 const circle = document.createElement('span');
@@ -92,12 +107,18 @@ btn.appendChild(circle);
 
 function selectPlatform(p, e) {
 platform = p;
+preco = precos[p];
 document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
 e.currentTarget.classList.add('active');
 criarRipple(e);
+
+// ATUALIZA O PREÇO NA TELA
+document.getElementById('precoValor').innerText = `R$ ${preco.toFixed(2).replace('.',',')}`;
+document.getElementById('btnGerar').innerText = `GERAR PIX R$ ${preco.toFixed(2).replace('.',',')}`;
+document.getElementById('btnGerar').disabled = false;
+document.getElementById('precoPix').innerText = `R$ ${preco.toFixed(2).replace('.',',')}`;
 }
 
-// VALIDAÇÃO DE CPF
 function validarCPF(cpf) {
 cpf = cpf.replace(/[^\d]+/g,'');
 if(cpf == '' || cpf.length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
@@ -114,7 +135,6 @@ if (resto != parseInt(cpf.substring(10, 11))) return false;
 return true;
 }
 
-// MÁSCARA DE CPF
 document.getElementById('cpf').addEventListener('input', function(e) {
 let v = e.target.value.replace(/\D/g,'');
 v = v.replace(/(\d{3})(\d)/,'$1.$2');
@@ -136,7 +156,7 @@ return;
 if (!nome) {
 document.getElementById('nome').classList.add('erro');
 setTimeout(() => document.getElementById('nome').classList.remove('erro'), 400);
-alert('Coloca seu nome no jogo!');
+alert('Coloca seu nome!');
 return;
 }
 if (!validarCPF(cpf)) {
@@ -150,7 +170,7 @@ erroCpf.style.display = 'none';
 document.getElementById('step1').style.display = 'none';
 document.getElementById('pixArea').style.display = 'block';
 document.getElementById('qrImg').src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(pixCode)}`;
-let msg = `Ja paguei a BIELSENSI ${platform.toUpperCase()}%0ANome: ${nome}%0ACPF: ${cpf}`;
+let msg = `Ja paguei a BIELSENSI ${platform.toUpperCase()}%0AValor: R$ ${preco.toFixed(2)}%0ANome: ${nome}%0ACPF: ${cpf}`;
 document.querySelector('#pixArea a').href = `https://wa.me/5577981047147?text=${msg}`;
 }
 
